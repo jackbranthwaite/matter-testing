@@ -66,15 +66,15 @@ export const MatterWrapper = () => {
       console.log(paths);
       letters.forEach((path, index) => {
         console.log(path);
-        // let vertices = Svg.pathToVertices(path as SVGPathElement, 0);
-        // let scaleFactor =
-        //   (windowWidth * SVG_WIDTH_AS_PERCENT_OF_CONTAINER_WIDTH) /
-        //   SVG_WIDTH_IN_PX;
-        // vertices = Vertices.scale(vertices, scaleFactor, scaleFactor);
-        // let svgBody = Bodies.fromVertices(index * SVG_WIDTH_IN_PX + 200, 0, [
-        //   vertices,
-        // ]);
-        // World.add(engine.world, svgBody);
+        let vertices = Svg.pathToVertices(path as SVGPathElement, 0);
+        let scaleFactor =
+          (windowWidth * SVG_WIDTH_AS_PERCENT_OF_CONTAINER_WIDTH) /
+          SVG_WIDTH_IN_PX;
+        vertices = Vertices.scale(vertices, scaleFactor, scaleFactor);
+        let svgBody = Bodies.fromVertices(index * SVG_WIDTH_IN_PX + 200, 0, [
+          vertices,
+        ]);
+        World.add(engine.world, svgBody);
       });
     };
 
